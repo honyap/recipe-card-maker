@@ -5,8 +5,7 @@
   --panel: #ffffff;
   --border: #e6ddcf;
   --accent: #e07a5f;
-  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", system-ui,
-    sans-serif;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", system-ui, sans-serif;
   color-scheme: light;
 }
 
@@ -288,6 +287,10 @@ textarea {
   color: #2f9e44;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.status-error {
+  color: #e03131;
 }
 
 /* Preview / card */

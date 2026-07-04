@@ -7,7 +7,7 @@ import { useRecipes } from "./useRecipes";
 import { createEmptyRecipe, type Recipe } from "./types";
 
 export default function App() {
-  const { recipes, saveRecipe, deleteRecipe } = useRecipes();
+  const { recipes, saveRecipe, deleteRecipe, loading, error } = useRecipes();
   const [recipe, setRecipe] = useState<Recipe>(createEmptyRecipe);
   const [status, setStatus] = useState("");
   const cardRef = useRef<HTMLDivElement>(null);
@@ -51,6 +51,8 @@ export default function App() {
 
       <div className="app-body">
         <aside className="sidebar no-print">
+          {loading && <p className="status-msg">読み込み中...</p>}
+          {error && <p className="status-msg status-error">{error}</p>}
           <RecipeList
             recipes={recipes}
             activeId={recipe.id}
